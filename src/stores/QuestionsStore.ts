@@ -5,6 +5,7 @@ import {RouteComponentProps} from 'react-router-dom'
 import getData from '../util/getData';
  class QuestionsStore{
      @observable questions : Question[] = []
+     @observable maxQuestions : number = 0
      @observable currentQuestion : Question = {category:'', type:'',
         difficulty:'',
         question:'',
@@ -15,6 +16,7 @@ import getData from '../util/getData';
         getData(url)
         .then(data=> {
             this.questions = data.results
+            this.maxQuestions = data.results.length
             routeProps.history.replace('/question/0')
         })
     }
@@ -22,6 +24,7 @@ import getData from '../util/getData';
         const currentQuestion : Question  = this.questions[questionId]
         if(typeof currentQuestion){
             this.currentQuestion = currentQuestion
+        
         }
     }
     @action emptyQuestions() : void{

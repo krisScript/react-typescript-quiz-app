@@ -1,6 +1,7 @@
 import { create } from "mobx-persist";
 import { createContext } from "react";
 import QuestionsStore  from "./QuestionsStore";
+import AnswersStore  from "./AnswersStore";
 import IdStore  from "./IdStore";
 
 const hydrate = create({
@@ -9,6 +10,7 @@ const hydrate = create({
 });
 export class RootStore {
   questionsStore = new QuestionsStore();
+  answersStore = new AnswersStore()
   idStore = new IdStore()
   constructor() {
     // console.log('nani')

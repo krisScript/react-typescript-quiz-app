@@ -1,10 +1,11 @@
 import React ,{FunctionComponent}from 'react';
 interface AnswerButtonProps{
     answer:string,
+    answerQuestionHandler:(answer:string) => void,
 }
-const AnswerButton : FunctionComponent<AnswerButtonProps> = ({answer}) => {
+const AnswerButton : FunctionComponent<AnswerButtonProps> = ({answer,answerQuestionHandler}) => {
   return (
-      <button>{answer}</button>
+      <button onClick={() => answerQuestionHandler(answer)}>{answer}</button>
   )
 }
 
