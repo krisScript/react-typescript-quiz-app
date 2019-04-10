@@ -1,0 +1,15 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center{
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+@mixin border{
+  border: solid 0.5px lighten($lighter-dark, 50%);
+  border-radius: 7px;
+}
