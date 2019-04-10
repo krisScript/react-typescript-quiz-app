@@ -4,7 +4,10 @@
 @import 'modules/media-queries';
 @import 'partials/layout';
 @import 'partials/main-container';
-
+@import 'partials/form';
+@import 'partials/buttons-container';
+@import 'partials/question';
+@import 'partials/game-over-screen';
 * {
   margin: 0;
   padding: 0;

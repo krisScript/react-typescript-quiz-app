@@ -1,5 +1,18 @@
-$right: rgb(111, 236, 167);
+$easy: rgb(111, 236, 167);
+$medium:rgb(69, 125, 245);
+$hard:#ff5252;
 $dark: #383838;
 $white: rgb(255, 255, 255);
-$correct:#ff5252;
 
+
+$difficulties: (
+  easy: $easy,
+  medium: $medium,
+  hard: $hard
+);
+@each $difficulty, $color in $difficulties {
+  .#{$difficulty}-bg {
+    background: $color;
+    color: $white;
+  }
+}

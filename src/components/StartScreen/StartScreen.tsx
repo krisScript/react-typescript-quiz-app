@@ -11,8 +11,8 @@ const StartScreen : FunctionComponent<RouteComponentProps> = observer((props) =>
     }
   return (
       <div className="start-screen">
-      <form onSubmit={submitHandler} className="start-screen-form">
-      <input  type="num" min="1" max="50" placeholder="Choose how many questions you want to answer!"       onChange={e => setNumberOfQuestions(e.target.value)}
+      <form  onSubmit={submitHandler} className="form">
+      <input className="input" type="number" min="1" max="50" placeholder="Choose how many questions you want to answer!"       onChange={e => setNumberOfQuestions(e.target.value)}
       value={numberOfQuestions} required/>
       <button className="button">START</button>
       </form>

@@ -10,6 +10,6 @@
   align-content: center;
 }
 @mixin border{
-  border: solid 0.5px lighten($lighter-dark, 50%);
+  border: solid 0.5px lighten(rgb(41, 39, 39), 50%);
   border-radius: 7px;
 }

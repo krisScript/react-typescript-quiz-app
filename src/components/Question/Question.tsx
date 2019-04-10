@@ -49,18 +49,22 @@ const Question: FunctionComponent<QuestionProps> = observer(
           difficulty: question.difficulty
         };
         answersStore.answerQuestion(questionAnswer);
-      if (Number(questionId) !== questionsStore.maxQuestions) {
+      if (Number(questionId) + 1 < questionsStore.maxQuestions) {
         const nextQuestionId = Number(questionId) + 1;
         questionsStore.setCurrentQuestion(nextQuestionId);
         setQuestion(questionsStore.currentQuestion)
+        setAnswers([
+          ...questionsStore.currentQuestion.incorrect_answers,
+          questionsStore.currentQuestion.correct_answer
+        ])
         history.replace(`/question/${nextQuestionId}`);
-      }else {
+      }else if(Number(questionId ) + 1 === questionsStore.maxQuestions) {
         history.replace(`/game-over`);
       }
     };
     return (
       <div className="question">
-        <h1>{question.question}</h1>
+      <h1 className={`${question.difficulty}-bg question-text`}>{question.question}</h1>
         <div className="buttons-container">
           {answers.map((answer, index) => (
             <AnswerButton

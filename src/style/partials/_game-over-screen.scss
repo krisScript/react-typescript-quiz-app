@@ -1,0 +1,14 @@
+.game-over-screen{
+    width: 100vw;
+    display:grid;
+    justify-items: center;
+    .answer{
+        margin: 1rem;
+        @include border;
+        padding: 0.5rem;
+        @include center;
+        p,h2{
+            padding: 0.5rem;
+        }
+    }
+}

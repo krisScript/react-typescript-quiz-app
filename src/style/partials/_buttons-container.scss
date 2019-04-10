@@ -1,0 +1,22 @@
+.buttons-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    width: 100vw;
+    @include large-screen{
+        width: 40vw;
+    }
+}
+button{
+    border-radius: 7px;
+    background: $medium;
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    color: $white;
+    a{
+        color:$white;
+    }
+    &:hover{
+        background: darken($medium,10%);
+    }
+}

@@ -3,14 +3,17 @@ import Question from '../types/Question'
 import {persist,create} from 'mobx-persist';
 import {RouteComponentProps} from 'react-router-dom'
 import getData from '../util/getData';
- class QuestionsStore{
-     @observable questions : Question[] = []
-     @observable maxQuestions : number = 0
-     @observable currentQuestion : Question = {category:'', type:'',
+const defaultQuestion : Question = 
+{category:'', type:'',
         difficulty:'',
         question:'',
         correct_answer:'',
         incorrect_answers:[]}
+
+ class QuestionsStore{
+     @observable questions : Question[] = []
+     @observable maxQuestions : number = 0
+     @observable currentQuestion : Question = defaultQuestion
     @action fetchQuestions(numberOfQuestions :string,routeProps:RouteComponentProps) : void{
         const url : string = `https://opentdb.com/api.php?amount=${numberOfQuestions}&type=multiple`
         getData(url)
@@ -29,6 +32,7 @@ import getData from '../util/getData';
     }
     @action emptyQuestions() : void{
        this.questions = []
+       this.currentQuestion = defaultQuestion
     }
     }
 

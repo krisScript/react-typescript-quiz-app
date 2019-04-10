@@ -5,7 +5,7 @@ interface AnswerButtonProps{
 }
 const AnswerButton : FunctionComponent<AnswerButtonProps> = ({answer,answerQuestionHandler}) => {
   return (
-      <button onClick={() => answerQuestionHandler(answer)}>{answer}</button>
+      <button className="button" onClick={() => answerQuestionHandler(answer)}>{answer}</button>
   )
 }
 
